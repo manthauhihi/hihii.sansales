@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shopee Affiliate Link Converter</title>
+<title>Shopee Link Converter</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F97046; min-height: 100vh; }
@@ -58,8 +58,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <body>
 
 <div class="header">
-  <h1>Shopee Affiliate Link</h1>
-  <span class="domain">affiliate.shopee.vn</span>
+  <h1>Shopee Link</h1>
+  <span class="domain">shopee.vn</span>
 </div>
 
 <div class="card">
@@ -142,7 +142,7 @@ const AFF_ID = '17355200429';
 function buildAffLink(raw) {
   let url; try { url = new URL(raw.trim()); } catch(e) { return null; }
   const host = url.hostname.replace('www.','');
-  const ok = ['shopee.vn','shope.ee','s.shopee.vn','shopee.com'].some(d => host===d || host.endsWith('.'+d));
+  const ok = ['shopee.vn','shope.ee','shp.ee','s.shopee.vn','shopee.com'].some(d => host===d || host.endsWith('.'+d));
   if (!ok) return null;
   url.searchParams.set('affiliate_id', AFF_ID);
   url.searchParams.set('smtt', '0');
